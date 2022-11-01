@@ -1,0 +1,14 @@
+.form {
+  width: 30%;
+  height: 250px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  border: solid 1px rgb(13, 118, 238);
+  border-radius: 20px;
+  align-items: center;
+}
