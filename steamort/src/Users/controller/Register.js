@@ -1,10 +1,10 @@
 import React from "react";
-import { Grid, Paper, TextField, Button } from "@mui/material";
+import { Grid, Paper, Avatar, TextField, Button } from "@mui/material";
 import "./AppLogin.css";
-const Login = () => {
+const Register = () => {
   const paperStyle = {
     padding: 20,
-    height: "30vh",
+    height: "45vh",
     width: 280,
     margin: "20px auto",
   };
@@ -18,8 +18,24 @@ const Login = () => {
     <Grid>
       <Paper elevation={10} style={paperStyle}>
         <Grid>
-          <h2>Ingresar</h2>
+          <h2>Bienvenido a SteamOrt!</h2>
         </Grid>
+        <TextField
+          id="nombre"
+          label="Nombre"
+          variant="outlined"
+          style={separado}
+          fullWidth
+          required
+        ></TextField>
+        <TextField
+          id="apellido"
+          label="Apellido"
+          variant="outlined"
+          style={separado}
+          fullWidth
+          required
+        ></TextField>
         <TextField
           id="email"
           label="Email"
@@ -39,11 +55,11 @@ const Login = () => {
           required
         ></TextField>
         <Button variant="contained" style={spacing} fullWidth>
-          Iniciar Sesion
+          Registrarse
         </Button>
       </Paper>
     </Grid>
   );
 };
 
-export default Login;
+export default Register;
