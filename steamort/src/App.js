@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   // return <Login></Login>;
-  return <GamesListPage></GamesListPage>;
+  return <Register></Register>;
 }
 
 export default App;

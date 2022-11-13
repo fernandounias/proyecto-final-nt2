@@ -1,7 +1,10 @@
-import React from "react";
-import { Grid, Paper, Avatar, TextField, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, Paper, TextField, Button } from "@mui/material";
 import "./AppLogin.css";
-const Register = () => {
+
+const url = "http://127.0.0.1:3001/api/users/register";
+
+const Register = (props) => {
   const paperStyle = {
     padding: 20,
     height: "45vh",
@@ -14,6 +17,49 @@ const Register = () => {
   const spacing = {
     "letter-spacing": "0.6px",
   };
+
+  const [userName, setUserName] = useState("");
+  const [userLastName, setUserLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const user = {
+      nombre: userName,
+      apellido: userLastName,
+      email: email,
+      password: password,
+    };
+
+    const request = new Request(url, {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: new Headers({ "Content-Type": "application/json" }),
+    });
+
+    fetch(request)
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
+  };
+
+  const handleNameChange = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const handleLastNameChange = (event) => {
+    setUserLastName(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
   return (
     <Grid>
       <Paper elevation={10} style={paperStyle}>
@@ -27,6 +73,7 @@ const Register = () => {
           style={separado}
           fullWidth
           required
+          onChange={handleNameChange}
         ></TextField>
         <TextField
           id="apellido"
@@ -35,6 +82,7 @@ const Register = () => {
           style={separado}
           fullWidth
           required
+          onChange={handleLastNameChange}
         ></TextField>
         <TextField
           id="email"
@@ -44,6 +92,7 @@ const Register = () => {
           type="email"
           fullWidth
           required
+          onChange={handleEmailChange}
         ></TextField>
         <TextField
           id="password"
@@ -53,8 +102,14 @@ const Register = () => {
           style={separado}
           fullWidth
           required
+          onChange={handlePasswordChange}
         ></TextField>
-        <Button variant="contained" style={spacing} fullWidth>
+        <Button
+          variant="contained"
+          style={spacing}
+          fullWidth
+          onClick={handleSubmit}
+        >
           Registrarse
         </Button>
       </Paper>
