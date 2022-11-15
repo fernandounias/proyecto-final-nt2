@@ -40,8 +40,14 @@ const Register = (props) => {
 
     fetch(request)
       .then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        console.log(res);
+        window.location.href = "/login";
+      })
+      .catch((error) => {
+        error.json();
+        window.alert(error.message);
+      });
   };
 
   const handleNameChange = (event) => {

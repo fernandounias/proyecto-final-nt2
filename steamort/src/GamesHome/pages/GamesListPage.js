@@ -12,11 +12,7 @@ const GamesListPage = () => {
       .then((data) => setGames(data));
   }, []);
 
-  return (
-    <>
-      <GamesList games={games} />
-    </>
-  );
+  return <div>Home</div>;
 };
 
 export default GamesListPage;

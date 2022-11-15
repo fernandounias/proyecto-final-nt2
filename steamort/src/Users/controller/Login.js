@@ -38,13 +38,17 @@ const Login = () => {
       fetch(request)
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
           sessionStorage.setItem("Token", res.token);
+
+          return (window.location.href = "/home");
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          window.alert("Credenciales no válidas");
+          console.log(error);
+        });
     } else {
       console.log("Entra en error");
-      return <Alert severity="error"> Debe ingresar email y contraseña</Alert>;
+      return window.alert("Los campos son requeridos");
     }
   };
 
