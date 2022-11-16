@@ -41,12 +41,14 @@ const Register = (props) => {
     fetch(request)
       .then((res) => res.json())
       .then((res) => {
+        console.log("---");
         console.log(res);
+
         window.location.href = "/login";
       })
       .catch((error) => {
-        error.json();
-        window.alert(error.message);
+        window.alert(error);
+        console.log(error);
       });
   };
 
