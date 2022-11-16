@@ -7,9 +7,9 @@ import Typography from "@mui/material/Typography";
 
 const Game = ({ game }) => {
   return (
-    <Card sx={{ maxWidth: 500 }}>
-      {/* <CardMedia component="img" height="600" image={game.image} />
-      <CardHeader /> */}
+    <Card>
+      <CardMedia component="img" height="600" image={game.image} />
+      <CardHeader />
       <CardContent>
         <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
           {game.name}
