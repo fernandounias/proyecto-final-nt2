@@ -40,7 +40,7 @@ const Login = () => {
         .then((res) => {
           sessionStorage.setItem("Token", res.token);
 
-          return (window.location.href = "/home");
+          return (window.location.href = "/gamesPurchase");
         })
         .catch((error) => {
           window.alert("Credenciales no válidas");
