@@ -8,12 +8,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import IconButton from "@mui/material/IconButton";
+import { useHistory } from "react-router-dom";
 
 const GamePurchase = ({ game }) => {
-  const comprar = () => {
-    return window.alert("Comprado");
-  };
-
+  const comprar = () => {};
   return (
     <Card>
       <CardMedia component="img" height="600" image={game.image} />

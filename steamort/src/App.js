@@ -11,10 +11,10 @@ function App() {
   return (
     <>
       <Router>
+        <ButtonAppBar />
         <Switch>
           <Route path="/home">
             <>
-              <ButtonAppBar />
               <GamesListPage></GamesListPage>
             </>
           </Route>
