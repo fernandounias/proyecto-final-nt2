@@ -1,8 +1,8 @@
 import React from "react";
+import MyGame from "./MyGame";
 import { Box } from "@mui/material";
-import GamePurchase from "./GamePurchase";
 
-const GamesListPurchase = ({ games }) => {
+const MyGames = ({ games }) => {
   return (
     <>
       <Box
@@ -14,12 +14,12 @@ const GamesListPurchase = ({ games }) => {
           gridTemplateColumns: "repeat(2, 1fr)",
         }}
       >
-        {games.map((game) => {
-          return <GamePurchase game={game} />;
+        {games.map((juego) => {
+          return <MyGame game={juego} />;
         })}
       </Box>
     </>
   );
 };
 
-export default GamesListPurchase;
+export default MyGames;

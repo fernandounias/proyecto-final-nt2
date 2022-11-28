@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Grid, Paper, TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "./AppLogin.css";
 
 const url = "http://127.0.0.1:3001/api/users/register";
 
 const Register = (props) => {
+  const navigate = useNavigate();
   const paperStyle = {
     padding: 20,
     height: "45vh",
@@ -44,7 +46,7 @@ const Register = (props) => {
         console.log("---");
         console.log(res);
 
-        window.location.href = "/login";
+        navigate("/login");
       })
       .catch((error) => {
         window.alert(error);

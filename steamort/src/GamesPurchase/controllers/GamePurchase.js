@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
@@ -7,11 +8,13 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import IconButton from "@mui/material/IconButton";
-import { useHistory } from "react-router-dom";
 
 const GamePurchase = ({ game }) => {
-  const comprar = () => {};
+  const navigate = useNavigate();
+  const comprar = () => {
+    sessionStorage.setItem("game", game.name);
+    return navigate("/addPurchase");
+  };
   return (
     <Card>
       <CardMedia component="img" height="600" image={game.image} />

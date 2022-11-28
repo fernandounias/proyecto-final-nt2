@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button, Alert } from "@mui/material";
+import { Grid, Paper, TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "./AppLogin.css";
 
 const url = "http://127.0.0.1:3001/api/users/login";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const paperStyle = {
     padding: 20,
     height: "30vh",
@@ -38,9 +41,11 @@ const Login = () => {
       fetch(request)
         .then((res) => res.json())
         .then((res) => {
+          console.log(res);
           sessionStorage.setItem("Token", res.token);
+          sessionStorage.setItem("email", email);
 
-          return (window.location.href = "/gamesPurchase");
+          return navigate("/gamesPurchase");
         })
         .catch((error) => {
           window.alert("Credenciales no válidas");

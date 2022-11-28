@@ -3,7 +3,6 @@ import { Box } from "@mui/material";
 import Game from "./Game";
 
 const GamesList = ({ games }) => {
-  console.log(games);
   return (
     <>
       <Box
