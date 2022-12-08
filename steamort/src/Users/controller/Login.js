@@ -41,16 +41,20 @@ const Login = () => {
       fetch(request)
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
+          console.log(res.error);
+
+          if (res.error) {
+            throw new Error(res.error);
+          }
           sessionStorage.setItem("Token", res.token);
           sessionStorage.setItem("email", email);
-
-          return navigate("/gamesPurchase");
         })
         .catch((error) => {
-          window.alert("Credenciales no válidas");
+          window.alert(error.message);
           console.log(error);
+          return navigate("/login");
         });
+      return navigate("/gamesPurchase");
     } else {
       console.log("Entra en error");
       return window.alert("Los campos son requeridos");
