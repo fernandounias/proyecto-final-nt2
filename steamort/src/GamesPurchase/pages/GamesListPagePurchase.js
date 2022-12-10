@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ButtonAppBar from "../../NavBar/Navbar";
 import GamesListPurchase from "../controllers/GamesListPurchase";
 
 const GamesListPagePurchase = () => {
@@ -12,7 +13,12 @@ const GamesListPagePurchase = () => {
       .then((data) => setGames(data));
   }, []);
 
-  return <GamesListPurchase games={games}></GamesListPurchase>;
+  return (
+    <>
+      <ButtonAppBar></ButtonAppBar>
+      <GamesListPurchase games={games}></GamesListPurchase>
+    </>
+  );
 };
 
 export default GamesListPagePurchase;

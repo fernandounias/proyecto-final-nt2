@@ -51,12 +51,16 @@ const Purchase = () => {
         .then((res) => {
           console.log("---");
           console.log(res);
+          if (res.error) {
+            throw new Error(res.error);
+          }
 
           navigate("/myGames");
         })
         .catch((error) => {
           window.alert(error);
           console.log(error);
+          navigate("/myGames");
         });
     }
     sessionStorage.removeItem("game");

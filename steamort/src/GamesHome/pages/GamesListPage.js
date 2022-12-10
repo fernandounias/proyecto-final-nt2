@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GamesList from "../controllers/GamesList";
+import ButtonAppBar from "../../NavBar/Navbar";
 
 const GamesListPage = () => {
   const [games, setGames] = useState([]);
@@ -12,7 +13,12 @@ const GamesListPage = () => {
       .then((data) => setGames(data));
   }, []);
 
-  return <GamesList games={games}></GamesList>;
+  return (
+    <>
+      <ButtonAppBar></ButtonAppBar>
+      <GamesList games={games}></GamesList>
+    </>
+  );
 };
 
 export default GamesListPage;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MyGames from "../controllers/MyGames";
-
+import ButtonAppBar from "../../NavBar/Navbar";
 const MyGamesPage = () => {
   const [myGames, setMyGames] = useState([]);
   const url = "http://localhost:3001/api/users/myGames";
@@ -33,6 +33,7 @@ const MyGamesPage = () => {
 
   return (
     <>
+      <ButtonAppBar></ButtonAppBar>
       {myGames.length > 0 ? (
         <MyGames games={myGames}></MyGames>
       ) : (

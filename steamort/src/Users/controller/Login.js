@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Grid, Paper, TextField, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./AppLogin.css";
+import ButtonAppBar from "../../NavBar/Navbar";
 
 const url = "http://127.0.0.1:3001/api/users/login";
 
@@ -52,8 +53,10 @@ const Login = () => {
         .catch((error) => {
           window.alert(error.message);
           console.log(error);
+
           return navigate("/login");
         });
+
       return navigate("/gamesPurchase");
     } else {
       console.log("Entra en error");
@@ -70,41 +73,44 @@ const Login = () => {
   };
 
   return (
-    <Grid>
-      <Paper elevation={10} style={paperStyle}>
-        <Grid>
-          <h2>Ingresar</h2>
-        </Grid>
-        <TextField
-          id="email"
-          label="Email"
-          variant="outlined"
-          style={separado}
-          type="email"
-          fullWidth
-          required
-          onChange={handleEmailChange}
-        ></TextField>
-        <TextField
-          id="password"
-          label="Contraseña"
-          variant="outlined"
-          type="password"
-          style={separado}
-          fullWidth
-          required
-          onChange={handlePasswordChange}
-        ></TextField>
-        <Button
-          variant="contained"
-          style={spacing}
-          fullWidth
-          onClick={handleSubmit}
-        >
-          Iniciar Sesion
-        </Button>
-      </Paper>
-    </Grid>
+    <>
+      <ButtonAppBar></ButtonAppBar>
+      <Grid>
+        <Paper elevation={10} style={paperStyle}>
+          <Grid>
+            <h2>Ingresar</h2>
+          </Grid>
+          <TextField
+            id="email"
+            label="Email"
+            variant="outlined"
+            style={separado}
+            type="email"
+            fullWidth
+            required
+            onChange={handleEmailChange}
+          ></TextField>
+          <TextField
+            id="password"
+            label="Contraseña"
+            variant="outlined"
+            type="password"
+            style={separado}
+            fullWidth
+            required
+            onChange={handlePasswordChange}
+          ></TextField>
+          <Button
+            variant="contained"
+            style={spacing}
+            fullWidth
+            onClick={handleSubmit}
+          >
+            Iniciar Sesion
+          </Button>
+        </Paper>
+      </Grid>
+    </>
   );
 };
 

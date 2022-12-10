@@ -5,14 +5,14 @@ import GamesListPurchase from "./GamesPurchase/pages/GamesListPagePurchase";
 import Purchase from "./Purchase/controllers/Purchase";
 import MyGamesPage from "./MyGames/pages/MyGamesPage";
 import { Route, Routes } from "react-router-dom";
-import ButtonAppBar from "../src/NavBar/Navbar";
+
 import "./App.css";
 
 function App() {
   // return <Login></Login>;
   return (
     <>
-      <ButtonAppBar />
+      {/* <ButtonAppBar /> Cuando se hace el Login, el Nav no se actualiza si no le das F5  */}
       <Routes>
         <Route path="/home" element={<GamesListPage></GamesListPage>} />
         <Route path="/login" element={<Login></Login>} />
