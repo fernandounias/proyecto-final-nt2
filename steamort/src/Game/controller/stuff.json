@@ -1,0 +1,115 @@
+{
+    "_id": "636449fb19eedcee07b157f4",
+    "name": "LEGO® Star Wars™: The Skywalker Saga Character Collection 1 & 2",
+    "price_overview": {
+        "currency": "ARS",
+        "initial": 199900,
+        "final": 199900,
+        "discount_percent": 0,
+        "initial_formatted": "",
+        "final_formatted": "ARS$ 1.999,00"
+    },
+    "platforms": {
+        "windows": true,
+        "mac": true,
+        "linux": false
+    },
+    "categories": [
+        {
+            "id": 2,
+            "description": "Single-player"
+        },
+        {
+            "id": 1,
+            "description": "Multi-player"
+        },
+        {
+            "id": 9,
+            "description": "Co-op"
+        },
+        {
+            "id": 39,
+            "description": "Shared/Split Screen Co-op"
+        },
+        {
+            "id": 24,
+            "description": "Shared/Split Screen"
+        },
+        {
+            "id": 21,
+            "description": "Downloadable Content"
+        },
+        {
+            "id": 22,
+            "description": "Steam Achievements"
+        },
+        {
+            "id": 28,
+            "description": "Full controller support"
+        },
+        {
+            "id": 23,
+            "description": "Steam Cloud"
+        },
+        {
+            "id": 41,
+            "description": "Remote Play on Phone"
+        },
+        {
+            "id": 42,
+            "description": "Remote Play on Tablet"
+        },
+        {
+            "id": 44,
+            "description": "Remote Play Together"
+        }
+    ],
+    "genres": [
+        {
+            "id": "1",
+            "description": "Action"
+        },
+        {
+            "id": "25",
+            "description": "Adventure"
+        }
+    ],
+    "screenshots": [
+        {
+            "id": 1,
+            "path_thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_4ad952a2dfcb70c0476f7ff58d2ca03eefc09983.600x338.jpg?t=1667325806",
+            "path_full": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_4ad952a2dfcb70c0476f7ff58d2ca03eefc09983.1920x1080.jpg?t=1667325806"
+        },
+        {
+            "id": 2,
+            "path_thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_0643bd5278bbdc315b934368f871892cc696b52d.600x338.jpg?t=1667325806",
+            "path_full": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_0643bd5278bbdc315b934368f871892cc696b52d.1920x1080.jpg?t=1667325806"
+        },
+        {
+            "id": 3,
+            "path_thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_2196c501be46e59a8f574e23c86c26c9787b47d8.600x338.jpg?t=1667325806",
+            "path_full": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_2196c501be46e59a8f574e23c86c26c9787b47d8.1920x1080.jpg?t=1667325806"
+        },
+        {
+            "id": 4,
+            "path_thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_bfdacc6a1cd6092fa5510fd6120ccbdac5ecd461.600x338.jpg?t=1667325806",
+            "path_full": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_bfdacc6a1cd6092fa5510fd6120ccbdac5ecd461.1920x1080.jpg?t=1667325806"
+        },
+        {
+            "id": 5,
+            "path_thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_dae7d63d06bb47ab07c86d0f643d8195d5c4a6ac.600x338.jpg?t=1667325806",
+            "path_full": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_dae7d63d06bb47ab07c86d0f643d8195d5c4a6ac.1920x1080.jpg?t=1667325806"
+        },
+        {
+            "id": 6,
+            "path_thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_5b2430854bed5dd25f150bdf3aa042436d487bc1.600x338.jpg?t=1667325806",
+            "path_full": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/ss_5b2430854bed5dd25f150bdf3aa042436d487bc1.1920x1080.jpg?t=1667325806"
+        }
+    ],
+    "release_date": {
+        "coming_soon": false,
+        "date": "1 Nov, 2022"
+    },
+    "background": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/page_bg_generated_v6b.jpg?t=1667325806",
+    "background_raw": "https://cdn.akamai.steamstatic.com/steam/apps/2194991/page.bg.jpg?t=1667325806"
+}
