@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MyGames from "../controllers/MyGames";
 import ButtonAppBar from "../../NavBar/Navbar";
+import { Alert, AlertTitle } from "@mui/material";
+
 const MyGamesPage = () => {
   const [myGames, setMyGames] = useState([]);
   const url = "http://localhost:3001/api/users/myGames";
@@ -38,7 +40,10 @@ const MyGamesPage = () => {
         <MyGames games={myGames}></MyGames>
       ) : (
         <>
-          <h1>El usuario no posee juegos</h1>
+          <Alert variant="outlined" severity="info">
+            <AlertTitle></AlertTitle>
+            El usuario <strong>no posee juegos</strong>
+          </Alert>
         </>
       )}
     </>

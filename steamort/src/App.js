@@ -2,6 +2,7 @@ import Login from "./Users/controller/Login";
 import Register from "./Users/controller/Register";
 import GamesListPage from "./GamesHome/pages/GamesListPage";
 import GamesListPurchase from "./GamesPurchase/pages/GamesListPagePurchase";
+import GamesCategoriesPage from "./GamesCategories/pages/GamesCategoriesPage";
 import Purchase from "./Purchase/controllers/Purchase";
 import MyGamesPage from "./MyGames/pages/MyGamesPage";
 import { Route, Routes } from "react-router-dom";
@@ -23,6 +24,10 @@ function App() {
         />
         <Route path="/addPurchase" element={<Purchase></Purchase>} />
         <Route path="/myGames" element={<MyGamesPage></MyGamesPage>} />
+        <Route
+          path="/gamesCategories/:genre"
+          element={<GamesCategoriesPage />}
+        />
       </Routes>
     </>
   );
