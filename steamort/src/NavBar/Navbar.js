@@ -28,7 +28,6 @@ const ButtonAppBar = () => {
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
   }));
@@ -106,7 +105,8 @@ const ButtonAppBar = () => {
                   edge="start"
                   color="inherit"
                   aria-label="menu"
-                  sx={{ mr: 2 }}
+                  onClick={handleDrawerOpen}
+                  sx={{ mr: 2, ...(open && { display: "none" }) }}
                 >
                   <MenuIcon />
                 </IconButton>

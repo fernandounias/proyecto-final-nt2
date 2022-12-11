@@ -4,7 +4,6 @@ import ButtonAppBar from "../../NavBar/Navbar";
 
 const GamesListPage = () => {
   const [games, setGames] = useState([]);
-  // const url = "https://rickandmortyapi.com/api/character";
   const url = "http://localhost:3001/api/games";
 
   useEffect(() => {

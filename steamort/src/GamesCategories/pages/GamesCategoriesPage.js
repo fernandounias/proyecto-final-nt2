@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 const GamesListPage = () => {
   function Description() {
     let { genre } = useParams();
-    console.log(genre + "ENTRA ACÁ");
     return genre;
   }
   const description = Description();
