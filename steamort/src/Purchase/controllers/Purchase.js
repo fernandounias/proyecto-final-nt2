@@ -12,7 +12,7 @@ const url = "http://127.0.0.1:3001/api/users/addPurchase";
 const Purchase = () => {
   const paperStyle = {
     padding: 20,
-    height: "60vh",
+    // height: "60vh",
     width: 350,
     margin: "20px auto",
   };

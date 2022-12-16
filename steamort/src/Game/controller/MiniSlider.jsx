@@ -1,5 +1,6 @@
-import { width } from '@mui/system';
 import React, {useEffect} from 'react'
+import left from './assets/left-s.png'
+import right from './assets/right-s.png'
 
 
 const MiniSlider = ({ images }) => {
@@ -16,7 +17,6 @@ const MiniSlider = ({ images }) => {
             //prevScrollLeft gives the number of px of element content that is scrolled horizontally
         }
         const dragMechanic = (e)=>{
-            // console.log(e.pageX)
             // scrolling images/carousel to left according to mouse pointer
             if(!IDS) return
             e.preventDefault()
@@ -30,11 +30,6 @@ const MiniSlider = ({ images }) => {
         carousel.addEventListener("mousedown", dragStart);
         carousel.addEventListener("mousemove", dragMechanic);
         carousel.addEventListener("mouseup", dragStop);
-
-        // return () => {
-        //     // carousel.removeEventListener("mousedown", dragStart);
-        //     carousel.removeEventListener("mousemove", dragMechanic);
-        // };
     },[]);
 
     const bodyStyle = {
@@ -43,14 +38,11 @@ const MiniSlider = ({ images }) => {
         justifyContent: 'center',
         // minHeight: '100vh',
         minHeight: '160px',
-        background: '#343F4F',
         padding: '0 10px',
 
     }
     const wrapperStyle = {
-        // maxWidth: '664px',
         maxWidth: '660px',
-        // maxWidth: '700px',
         backgroung: '#fff',
         position: 'relative'
     }
@@ -73,11 +65,6 @@ const MiniSlider = ({ images }) => {
         borderRadius: '10px'
     }
     const iconStyle = {
-        // fontSize: '30px',
-        // color: '#4c4c4c',
-        // color: '#fff',
-        // background: '#fff',
-        // background: 'rgba(255, 255, 255, 0.2)',
         display: 'block',
         width: '40px',
         height: '40px',
@@ -91,17 +78,19 @@ const MiniSlider = ({ images }) => {
     }
     const iconLStyle = {
         ...iconStyle, padding: '0px 3px 0px 0px',
-        // left: '-15px', transform: 'translatey(100%)',
-        left: '-27px', transform: 'translatey(100%)',
-        backgroundImage: `url(${process.env.PUBLIC_URL + 'left-S.png'})`,
+        // left: '-27px', transform: 'translatey(100%)',
+        left: '-10px', transform: 'translatey(100%)',
+        // backgroundImage: `url(${process.env.PUBLIC_URL + 'left-S.png'})`,
+        backgroundImage: `url(${left})`,
         bottom: '86px'
     }
     const iconRStyle = {
         ...iconStyle, padding: '0px 0px 0px 3px',
-        // right: '-17px',
-        right: '-23px',
+        // right: '-23px',
+        right: '-7px',
         transform: 'translatey(-200%)',
-        backgroundImage: `url(${process.env.PUBLIC_URL + 'right-s.png'})`,
+        // backgroundImage: `url(${process.env.PUBLIC_URL + 'right-s.png'})`,
+        backgroundImage: `url(${right})`,
         bottom: '-34px'
     }
 
@@ -110,25 +99,21 @@ const MiniSlider = ({ images }) => {
         let link = image.path_thumbnail.split('?')
         return link[0]
     }
-    //Create A Draggable Image Slider in HTML CSS & JavaScript | Mobile Friendly Slider in JavaScript - CodingNepal
-    // Controlling background-images | CSS Tutorial - Kevin Powell
-
+    
   return (
     <div style={bodyStyle}>
         <div style={wrapperStyle}>
-            {/* <p style={iconLStyle} >❰</p> */}
             <p style={iconLStyle} ></p>
             <div style={carouselStyle} id='carousel'>
                 {images.map((image) => {
                     let link = src(image)
-                    // <img key='image.id' src={src(image)} alt="img" style={imageStyle}/>
-                    // <div key='image.id' style={{...imageStyle, backgroundImage: src(image)}}></div>
+
                     return(
                         <div key='image.id' style={{...imageStyle, backgroundImage:`url(${link})`}}></div>
                     )
                     })}
             </div>
-            {/* <p style={iconRStyle}>❱</p> */}
+
             <p style={iconRStyle}></p>
         </div>
     </div>

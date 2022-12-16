@@ -39,12 +39,11 @@ const MyGamesPage = () => {
       {myGames.length > 0 ? (
         <MyGames games={myGames}></MyGames>
       ) : (
-        <>
-          <Alert variant="outlined" severity="info">
-            <AlertTitle></AlertTitle>
-            El usuario <strong>no posee juegos</strong>
+          <Alert variant="outlined" severity="info" style={{width: '90%', margin: 'auto', display: 'flex', alignItems: 'center'}}>
+            <AlertTitle> 
+              <p>El usuario <strong>no posee juegos</strong></p>
+            </AlertTitle>
           </Alert>
-        </>
       )}
     </>
   );

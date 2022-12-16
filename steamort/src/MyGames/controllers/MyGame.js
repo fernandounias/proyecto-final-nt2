@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CardActions from "@mui/material/CardActions";
@@ -16,14 +15,13 @@ const MyGame = ({ game }) => {
     navigate("/myGames");
   };
   return (
-    <Card>
-      <CardMedia component="img" height="600" image={game.image} />
-      <CardHeader />
+    <Card sx={{ maxWidth: 550, margin: '10px'}}>
+      <CardMedia component="img" image={game.image} />
       <CardContent>
         <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
           {game.name}
         </Typography>
-        <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
+        <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
           Cantidad de veces jugadas: {game.vecesJugadas}
         </Typography>
       </CardContent>
@@ -32,6 +30,7 @@ const MyGame = ({ game }) => {
           variant="contained"
           startIcon={<PlayArrowIcon />}
           onClick={jugar}
+          style={{margin: '0px 20px 10px'}}
         >
           Jugar
         </Button>

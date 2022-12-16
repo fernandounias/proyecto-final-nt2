@@ -33,7 +33,7 @@ const ButtonAppBar = () => {
   }));
 
   const handleSubmitHome = () => {
-    return navigate("/home");
+    return navigate("/");
   };
 
   const handleSubmitHomeLogin = () => {
@@ -55,7 +55,7 @@ const ButtonAppBar = () => {
   const handleSubmitClose = () => {
     sessionStorage.removeItem("Token");
     sessionStorage.removeItem("email");
-    return navigate("/home");
+    return navigate("/");
   };
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -67,7 +67,7 @@ const ButtonAppBar = () => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} style={{marginBottom: '20px'}}>
         <AppBar position="static">
           <Toolbar>
             {sessionStorage.getItem("Token") === null ? (

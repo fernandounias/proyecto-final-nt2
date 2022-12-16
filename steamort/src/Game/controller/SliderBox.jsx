@@ -3,7 +3,6 @@ import ImageSlider from './ImageSlider'
 
 const SliderBox = ({images , size}) => {
 
-    // console.log(size.height)
     const containerStyle = {
         width: size.width,
         height: size.height,

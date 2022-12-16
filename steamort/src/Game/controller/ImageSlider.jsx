@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
+import left from './assets/left.png'
+import right from './assets/right.png'
+
 
 const ImageSlider = ({images}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // based on Build React Image Slider From Scratch Tutorial - Monsterlessons Academy
   // -----------------------
   const slideStyle = {
     width: '100%' ,
@@ -29,14 +31,13 @@ const ImageSlider = ({images}) => {
   const leftArrowStyle = {
     ... ArrowStyle,
     left: '32px',
-    backgroundImage: `url(${process.env.PUBLIC_URL + 'left.png'})`,
+    backgroundImage: `url(${left})`
   }
   const rightArrowStyle = {
     ... ArrowStyle,
     right: '32px',
-    backgroundImage: `url(${process.env.PUBLIC_URL + 'right.png'})`
+    backgroundImage: `url(${right})`
   }
-
   // -----------------------
 const previous = () => {
   const first = currentIndex === 0
@@ -51,9 +52,7 @@ const next = () => {
 
   return (
     <div style={sliderStyle}>
-        {/* <div style={leftArrowStyle} onClick={previous}>❰</div> */}
         <div style={leftArrowStyle} onClick={previous}></div>
-        {/* <div style={rightArrowStyle} onClick={next}>❱</div> */}
         <div style={rightArrowStyle} onClick={next}></div>
       <div style={slideStyle}></div>
     </div>

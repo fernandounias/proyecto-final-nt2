@@ -11,15 +11,18 @@ const Login = () => {
 
   const paperStyle = {
     padding: 20,
-    height: "30vh",
+    // height: "30vh",
     width: 280,
     margin: "20px auto",
+    // minHeight: '300px'
   };
   const separado = {
     margin: "8px 0",
   };
   const spacing = {
-    "letter-spacing": "0.6px",
+    letterSpacing: "0.6px",
+    margin: '12px 0px',
+    padding: '12px 0px'
   };
 
   const [email, setEmail] = useState("");

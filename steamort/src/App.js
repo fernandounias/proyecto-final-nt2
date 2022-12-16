@@ -5,6 +5,7 @@ import GamesListPurchase from "./GamesPurchase/pages/GamesListPagePurchase";
 import GamesCategoriesPage from "./GamesCategories/pages/GamesCategoriesPage";
 import Purchase from "./Purchase/controllers/Purchase";
 import MyGamesPage from "./MyGames/pages/MyGamesPage";
+import Game from "./Game/pages/Game";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -15,19 +16,20 @@ function App() {
     <>
       {/* <ButtonAppBar /> Cuando se hace el Login, el Nav no se actualiza si no le das F5  */}
       <Routes>
-        <Route path="/home" element={<GamesListPage></GamesListPage>} />
-        <Route path="/login" element={<Login></Login>} />
-        <Route path="/register" element={<Register></Register>} />
+        <Route index element={<GamesListPage/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
         <Route
           path="/gamesPurchase"
-          element={<GamesListPurchase></GamesListPurchase>}
+          element={<GamesListPurchase/>}
         />
-        <Route path="/addPurchase" element={<Purchase></Purchase>} />
-        <Route path="/myGames" element={<MyGamesPage></MyGamesPage>} />
+        <Route path="/addPurchase" element={<Purchase/>} />
+        <Route path="/myGames" element={<MyGamesPage/>} />
         <Route
           path="/gamesCategories/:genre"
           element={<GamesCategoriesPage />}
         />
+        <Route path="/game/:id" element={<Game/>}/>
       </Routes>
     </>
   );

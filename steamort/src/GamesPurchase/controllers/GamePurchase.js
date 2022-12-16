@@ -1,13 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PageviewIcon from '@mui/icons-material/Pageview';
+
+
 
 const GamePurchase = ({ game }) => {
   const navigate = useNavigate();
@@ -15,10 +17,18 @@ const GamePurchase = ({ game }) => {
     sessionStorage.setItem("game", game.name);
     return navigate("/addPurchase");
   };
+
+  const handleLink = ()=>{
+    navigate("/game/" + `${game._id}`);
+    window.location.reload();
+  }
+
+
   return (
-    <Card>
-      <CardMedia component="img" height="600" image={game.image} />
-      <CardHeader />
+    <Card sx={{ maxWidth: 600, margin: '10px' }} style={{display: 'flex', 
+    alignItems: 'start', 
+    flexDirection: 'column', alignContent: 'space-around'}}>
+      <CardMedia component="img" height="350" image={game.image} />
       <CardContent>
         <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
           {game.name}
@@ -27,11 +37,18 @@ const GamePurchase = ({ game }) => {
       <CardActions>
         <Button
           variant="contained"
-          startIcon={<AddShoppingCartIcon />}
+          startIcon={<ShoppingCartIcon />}
           onClick={comprar}
+          style={{margin: '15px 20px'}}
         >
           Comprar
         </Button>
+
+        <Button variant="contained" startIcon={<PageviewIcon />} 
+        onClick={handleLink} style={{margin: '15px 20px'}}> 
+          Previsualizar 
+        </Button>
+
       </CardActions>
     </Card>
   );

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Box, TextField } from "@mui/material";
 import Game from "./Game";
 import SearchIcon from "@mui/icons-material/Search";
+import InputAdornment from '@mui/material/InputAdornment';
+
 
 const GamesList = ({ games }) => {
   const [busqueda, setBusqueda] = useState("");
@@ -34,16 +36,24 @@ const GamesList = ({ games }) => {
 
   return (
     <div className="main">
-      <div className="search">
+      <div className="search" style={{display: 'flex', justifyContent: 'center', marginBottom: '10px'}}>
         <Box
           sx={{
             display: "inline-flex",
             mx: "2px",
             margin: "8px",
+            width: '60%'
           }}
         >
           <TextField
             id="outlined-basic"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
             onChange={inputHandler}
             variant="outlined"
             fullWidth
