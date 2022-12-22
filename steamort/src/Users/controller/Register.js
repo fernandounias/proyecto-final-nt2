@@ -20,8 +20,8 @@ const Register = (props) => {
   };
   const spacing = {
     letterSpacing: "0.6px",
-    margin: '12px 0px',
-    padding: '12px 0px'
+    margin: "12px 0px",
+    padding: "12px 0px",
   };
 
   const [userName, setUserName] = useState("");
@@ -49,7 +49,9 @@ const Register = (props) => {
       .then((res) => {
         console.log("---");
         console.log(res);
-
+        if (res.error) {
+          throw new Error(res.error);
+        }
         navigate("/login");
       })
       .catch((error) => {
