@@ -9,28 +9,30 @@ const MyGamesPage = () => {
 
   useEffect(() => {
     let email = sessionStorage.getItem("email");
-    if (
-      sessionStorage.getItem("Token") === null ||
-      sessionStorage.getItem("Token") === undefined
-    ) {
-      window.alert("Debe iniciar sesión para ver sus juegos");
-    } else if (sessionStorage.getItem("Token") && email) {
-      async function fetchData() {
-        const response = await fetch(url, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: sessionStorage.getItem("Token"),
-            email: email,
-          },
-        });
-        response.json().then((data) => {
-          setMyGames(data);
-        });
-      }
 
-      fetchData();
+    async function fetchData() {
+      await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: sessionStorage.getItem("Token"),
+          email: email,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.error) {
+            throw new Error(data.error);
+          }
+          setMyGames(data);
+        })
+        .catch((error) => {
+          window.alert(error.message);
+          window.location.href = "/login";
+        });
     }
+
+    fetchData();
   }, []);
 
   return (
@@ -39,11 +41,22 @@ const MyGamesPage = () => {
       {myGames.length > 0 ? (
         <MyGames games={myGames}></MyGames>
       ) : (
-          <Alert variant="outlined" severity="info" style={{width: '90%', margin: 'auto', display: 'flex', alignItems: 'center'}}>
-            <AlertTitle> 
-              <p>El usuario <strong>no posee juegos</strong></p>
-            </AlertTitle>
-          </Alert>
+        <Alert
+          variant="outlined"
+          severity="info"
+          style={{
+            width: "90%",
+            margin: "auto",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <AlertTitle>
+            <p>
+              El usuario <strong>no posee juegos</strong>
+            </p>
+          </AlertTitle>
+        </Alert>
       )}
     </>
   );
